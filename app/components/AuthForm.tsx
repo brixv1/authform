@@ -95,6 +95,26 @@ const AuthForm = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  // demo signin
+  const demoSignIn = () => {
+    setIsLoading(true);
+    signIn("credentials", {
+      email: "Demo@gmail.com",
+      password: "DemoUserPw",
+      redirect: false,
+    })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error("Invalid credentials!");
+        }
+
+        if (callback?.ok && !callback?.error) {
+          toast.success("Logged in successfully!");
+          router.push("/success");
+        }
+      })
+      .finally(() => setIsLoading(false));
+  };
 
   return (
     <div
@@ -148,6 +168,7 @@ const AuthForm = () => {
             <Button disabled={isLoading} type="submit">
               {variant === "LOGIN" ? "Sign in" : "Register"}
             </Button>
+            <Button onClick={demoSignIn}>Demo</Button>
           </div>
         </form>
 
