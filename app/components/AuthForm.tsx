@@ -168,7 +168,9 @@ const AuthForm = () => {
             <Button disabled={isLoading} type="submit">
               {variant === "LOGIN" ? "Sign in" : "Register"}
             </Button>
-            <Button onClick={demoSignIn}>Demo</Button>
+            <Button disabled={isLoading} type="button" onClick={demoSignIn}>
+              Demo
+            </Button>
           </div>
         </form>
 
