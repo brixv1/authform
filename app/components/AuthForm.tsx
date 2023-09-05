@@ -119,7 +119,7 @@ const AuthForm = () => {
   return (
     <div
       className="
-    mt-8 
+    mt-3 
     sm:mx-auto 
     sm:w-full 
     sm:max-w-md
